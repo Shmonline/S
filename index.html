@@ -250,38 +250,52 @@ footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:v
     </div>
     
     <!-- النموذج المعدل المربوط مباشرة -->
-<form action="https://api.web3forms.com/submit" method="POST">
-  <input type="hidden" name="access_key" value="4f31ae99-1d38-44b8-85e6-d3059043dc64">
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
-  <button type="submit">Submit Form</button>
-</form>
-  <!-- إعدادات عنوان الرسالة والحماية من البوتات -->
-  <input type="hidden" name="subject" value="طلب جديد من موقع شركة سهم">
-  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+<main>
+  <section>
+    <div>
+   <main>
+  <section>
+    <div>
+      <form action="https://api.web3forms.com/submit" method="POST">
+        <!-- مفتاح الوصول لخدمة Web3Forms -->
+        <input type="hidden" name="access_key" value="4f31ae99-1d38-44b8-85e6-d3059043dc64">
+        
+        <!-- إعدادات عنوان الرسالة والحماية من البوتات -->
+        <input type="hidden" name="subject" value="طلب جديد من موقع شركة سهم">
+        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
 
-  <!-- حقول البيانات -->
-  <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
-  <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required>
-  
-  <select name="نوع الطلب" required>
-    <option value="">نوع الطلب</option>
-    <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
-    <option value="استشارات رياضية">استشارات رياضية</option>
-    <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
-    <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
-    <option value="شراكة أو تعاون">شراكة أو تعاون</option>
-    <option value="استفسار آخر">استفسار آخر</option>
-  </select>
+        <!-- حقول البيانات الصحيحة -->
+        <div style="margin-bottom: 15px;">
+          <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
+        </div>
 
-  <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
-  <button class="button" type="submit">إرسال الطلب</button>
-</form>
+        <div style="margin-bottom: 15px;">
+          <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required>
+        </div>
+        
+        <div style="margin-bottom: 15px;">
+          <select name="نوع الطلب" required>
+            <option value="">نوع الطلب</option>
+            <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
+            <option value="استشارات رياضية">استشارات رياضية</option>
+            <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
+            <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
+            <option value="شراكة أو تعاون">شراكة أو تعاون</option>
+            <option value="استفسار آخر">استفسار آخر</option>
+          </select>
+        </div>
 
-  </div>
-</section>
-</main> 
+        <div style="margin-bottom: 15px;">
+          <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك" required></textarea>
+        </div>
+
+        <!-- زر إرسال واحد فقط -->
+        <button class="button" type="submit">إرسال الطلب</button>
+      </form>
+    </div>
+  </section>
+</main>
+
 
 <footer>
   <strong>شركة سهم أثلتيكس | SahamAthletix</strong>
