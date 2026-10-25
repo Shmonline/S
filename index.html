@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>شركة سهم | نحو قمة الأداء </title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --navy:#061D3A;
+  --navy2:#0A2A4C;
+  --burgundy:#B70F35;
+  --white:#F7F7F7;
+  --gray:#B9C5D2;
+}
+* {box-sizing:border-box}
+html {scroll-behavior:smooth;scroll-padding-top:85px}
+body {margin:0;background:var(--navy);color:var(--white);font-family:'Alexandria',sans-serif}
+a {text-decoration:none;color:inherit}
+
+header {
+  position:sticky;top:0;z-index:100;display:flex;
+  justify-content:space-between;align-items:center;
+  padding:12px 6%;background:rgba(6,29,58,.96);
+  backdrop-filter:blur(15px);border-bottom:1px solid #ffffff20
+}
+.logo {width:130px;height:58px;object-fit:contain}
+nav {display:flex;gap:20px;align-items:center}
+nav a {font-size:12px;transition:color .3s}
+nav a:hover {color:#E51B48}
+.menu {display:none;background:none;color:white;border:1px solid #ffffff40;padding:8px 12px;font-size:20px;cursor:pointer}
+
+.hero {
+  min-height:620px;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+  background:
+    linear-gradient(270deg,#061D3A 5%,#061D3Ad9 45%,#061D3A40 100%),
+    url('IMG_0915.jpeg') center/cover no-repeat;
+}
+
+
+.hero-content {max-width:760px;padding:70px 8%;animation:appear 1s ease both}
+.eyebrow {color:#F04463;font-size:12px;letter-spacing:1px}
+h1 {font-size:clamp(32px,5vw,58px);line-height:1.6;margin:20px 0}
+h1 span,h2 span {color:#E51B48}
+.hero p {color:var(--gray);max-width:620px;line-height:2.2;font-size:14px}
+.button {display:inline-block;padding:13px 24px;margin-top:15px;background:var(--burgundy);color:white;border:1px solid var(--burgundy);font:inherit;font-size:13px;cursor:pointer;transition:.3s}
+.button:hover {background:transparent;transform:translateY(-3px)}
+
+.section {padding:80px 7%;scroll-margin-top:80px}
+.section-title {margin-bottom:35px}
+.section-title h2 {font-size:clamp(27px,4vw,42px);margin:12px 0}
+.section-title p {color:var(--gray);font-size:13px;line-height:2}
+
+.services {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.card {background:var(--navy2);border:1px solid #ffffff18;overflow:hidden;transition:.3s}
+.card:hover {transform:translateY(-6px);border-color:var(--burgundy)}
+.card img {width:100%;height:190px;object-fit:cover;display:block}
+.card-content {padding:20px}
+.card h3 {font-size:16px}
+.card p,.equipment p,.event p {font-size:12px;line-height:2.2;color:var(--gray)}
+
+.academy {display:grid;grid-template-columns:1fr 1fr;background:#F7F7F7;color:var(--navy)}
+.academy>img {width:100%;height:100%;min-height:420px;object-fit:cover}
+.academy-content {padding:50px 8%;align-self:center}
+.academy-content h2 {font-size:clamp(28px,4vw,42px)}
+.academy-content p {font-size:13px;line-height:2.2;color:#536173}
+.features {display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:25px 0}
+.features div {border-top:1px solid #D7DDE4;padding:13px 0;font-size:13px;font-weight:600}
+.features b {color:var(--burgundy)}
+
+.equipment-list {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.equipment {background:var(--navy2);padding:23px;border-right:3px solid var(--burgundy);transition:.3s}
+.equipment:hover {background:#10385E;transform:translateY(-4px)}
+.equipment h3 {font-size:15px}
+
+.events {background:linear-gradient(#061D3Ae8,#061D3Ae8),url('https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=1600&q=85') center/cover}
+.events-grid {display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.event {padding:28px;background:#ffffff0b;border:1px solid #ffffff30}
+.event h3 {font-size:20px}
+
+.contact-grid {display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact-grid p {color:var(--gray);font-size:13px;line-height:2.3}
+form {display:grid;gap:14px}
+
+/* تعديل ألوان الإدخال لضمان وضوح الكتابة */
+input, select, textarea {
+  width:100%;
+  padding:14px;
+  color:#ffffff !important;
+  background:var(--navy2);
+  border:1px solid #ffffff30;
+  font:inherit;
+  font-size:12px;
+  border-radius:0;
+}
+input::placeholder, textarea::placeholder {color:#B9C5D2}
+select option {background:var(--navy2);color:white}
+textarea {resize:vertical}
+
+footer {padding:28px 6%;text-align:center;border-top:1px solid #ffffff20;color:var(--gray);font-size:11px;line-height:2.5}
+.reveal {opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible {opacity:1;transform:translateY(0)}
+
+@keyframes appear {from{opacity:0;transform:translateY(25px)}to{opacity:1;transform:translateY(0)}}
+@media(max-width:950px) {
+  nav {gap:10px}
+  nav a {font-size:10px}
+  .services {grid-template-columns:repeat(2,minmax(0,1fr))}
+  .equipment-list {grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(max-width:650px) {
+  header {padding:10px 5%}
+  .logo {width:105px;height:48px}
+  .menu {display:block}
+  nav {display:none;position:absolute;top:100%;right:0;left:0;padding:18px 5%;background:var(--navy);flex-direction:column;align-items:stretch}
+  nav.open {display:flex}
+  nav a {font-size:13px;padding:8px}
+  .hero {min-height:560px;background-position:40% center}
+  .hero-content {padding:55px 6%}
+  .section {padding:55px 5%}
+  .services {gap:10px}
+  .card img {height:130px}
+  .card-content {padding:12px}
+  .card h3 {font-size:13px}
+  .card p {font-size:11px}
+  .academy,.contact-grid,.events-grid {grid-template-columns:1fr}
+  .academy>img {min-height:260px;max-height:330px}
+  .academy-content {padding:30px 6%}
+  .equipment-list {grid-template-columns:1fr}
+}
+@media(prefers-reduced-motion:reduce) {
+  *,*::before,*::after {animation:none!important;transition:none!important;scroll-behavior:auto!important}
+  .reveal {opacity:1;transform:none}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <a href="#home">
+    <img class="logo" src="سههم.png" alt="شعار سهم">
+  </a>
+  <button class="menu" id="menuButton" aria-label="فتح القائمة" aria-expanded="false">☰</button>
+  <nav id="navigation">
+    <a href="#home">الرئيسية</a>
+    <a href="#sectors">قطاعاتنا</a>
+    <a href="#ownership">نملك وندير</a>
+    <a href="#achievements">إنجازاتنا</a>
+    <a href="#about">من نحن</a>
+    <a href="#partnerships">شراكاتنا</a>
+    <a href="#contact">تواصل معنا</a>
+  </nav>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="hero-content">
+    <div class="eyebrow">شركة سهم SAHAM</div>
+    <h1>شركة سهم<br><span>نحو قمة الأداء .. </span></h1>
+    <p>شركة سعودية متخصصة في إدارة وتشغيل المنشآت والأكاديميات الرياضية وتقديم الاستشارات الرياضية وتنظيم الفعاليات. نعمل وفق أفضل الممارسات الإدارية والرياضية لتحقيق التميز والاستدامة وتعزيز الأثر الإيجابي في المجتمع.</p>
+    <a class="button" href="#sectors">استكشف قطاعاتنا</a>
+  </div>
+</section>
+
+<section class="section" id="sectors">
+  <div class="section-title reveal">
+    <div class="eyebrow">OUR SERVICES</div>
+    <h2>قطاعاتنا <span>الرياضية</span></h2>
+    <p>حلول متكاملة لإدارة وتشغيل وتطوير المشاريع والأنشطة الرياضية.</p>
+  </div>
+  <div class="services">
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?auto=format&fit=crop&w=700&q=80" alt="تشغيل المنشآت الرياضية" loading="lazy">
+      <div class="card-content"><h3>تشغيل المنشآت الرياضية</h3><p>إدارة وتشغيل المرافق والمنشآت الرياضية بكفاءة عالية وفق معايير الجودة والسلامة.</p></div>
+    </article>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1551836022-d5d88e9218df?auto=format&fit=crop&w=700&q=80" alt="الاستشارات الرياضية" loading="lazy">
+      <div class="card-content"><h3>الاستشارات الرياضية</h3><p>حلول متخصصة في التخطيط الاستراتيجي والتشغيل والحوكمة والتطوير المؤسسي.</p></div>
+    </article>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=700&q=80" alt="الأكاديميات الرياضية" loading="lazy">
+      <div class="card-content"><h3>تشغيل الأكاديميات الرياضية</h3><p>تطوير المواهب من خلال برامج تدريبية احترافية في مختلف الألعاب الرياضية.</p></div>
+    </article>
+    <article class="card reveal">
+      <img src="https://images.unsplash.com/photo-1521412644187-c49fa049e84d?auto=format&fit=crop&w=700&q=80" alt="الفعاليات الرياضية" loading="lazy">
+      <div class="card-content"><h3>الفعاليات الرياضية</h3><p>تنظيم وإدارة الفعاليات والبطولات لتعزيز التنافسية والمشاركة المجتمعية.</p></div>
+    </article>
+  </div>
+</section>
+
+<section class="academy" id="ownership">
+  <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1200&q=85" alt="الأكاديميات الرياضية" loading="lazy">
+  <div class="academy-content reveal">
+    <div class="eyebrow">OWNERSHIP & MANAGEMENT</div>
+    <h2>نملك <span>وندير</span></h2>
+    <p>مشاريعنا وأكاديمياتنا الرياضية الرائدة في تطوير المواهب والمهارات.</p>
+    <div class="features">
+      <div><b>•</b> أكاديمية مواهب الباحة</div>
+      <div><b>•</b> أكاديمية روز ROSE ACADEMY</div>
+    </div>
+    <a class="button" href="#contact">تواصل لمزيد من التفاصيل</a>
+  </div>
+</section>
+
+<section class="section" id="achievements">
+  <div class="section-title reveal">
+    <div class="eyebrow">OUR ACHIEVEMENTS</div>
+    <h2>منجزاتنا <span>في القطاع الرياضي</span></h2>
+    <p>سجل حافل بالشركاء والإنجازات الرياضية والمجتمعية.</p>
+  </div>
+  <div class="equipment-list">
+    <article class="equipment reveal"><h3>تشغيل الفئات السنية</h3><p>تشغيل الفئات السنية لنادي الباحة ونادي العين ونادي الزيتون.</p></article>
+    <article class="equipment reveal"><h3>تصدير مواهب مميزة</h3><p>تصدير مواهب كروية مميزة لنادي الاتحاد ونادي الأهلي.</p></article>
+    <article class="equipment reveal"><h3>إقامة فعاليات ومباريات</h3><p>إقامة فعاليات ومباريات سوبر بين عدد من الأكاديميات في جدة والقصيم.</p></article>
+    <article class="equipment reveal"><h3>تشغيل المرافق العامة</h3><p>تشغيل مرافق الحدائق مثل ملاعب مدينة الأمير حسام بالباحة بالتعاون مع أمانة المنطقة.</p></article>
+    <article class="equipment reveal"><h3>تشغيل الأنشطة الرياضية</h3><p>تشغيل الأنشطة الرياضية في نادي الزيتون.</p></article>
+    <article class="equipment reveal"><h3>إدارة المرافق الرياضية</h3><p>إدارة وتشغيل المرافق الرياضية لنادي الزيتون.</p></article>
+  </div>
+</section>
+
+<section class="section events" id="about">
+  <div class="events-grid">
+    <article class="event reveal">
+      <div class="eyebrow">ABOUT US</div>
+      <h3>من نحن</h3>
+      <p>شركة سعودية 100% بإدارة وطنية وخبرة في المجال الرياضي والإداري والاستراتيجي والتميز المؤسسي. نعمل لبناء منظومة رياضية مستدامة تُسهم في تحقيق مستهدفات رؤية السعودية 2030.</p>
+    </article>
+    <article class="event reveal" id="partnerships">
+      <div class="eyebrow">PARTNERSHIPS</div>
+      <h3>شراكاتنا</h3>
+      <p>نؤمن بأهمية الشراكة مع المدارس التعليمية وتفعيل مبادرة ما بعد المدرسة لتعزيز المشاركة المجتمعية وتنمية المواهب من سن مبكرة.</p>
+    </article>
+  </div>
+</section>
+
+<section class="section" id="contact">
+  <div class="contact-grid">
+    <div class="reveal">
+      <div class="eyebrow">CONTACT SAHAM</div>
+      <h2>تواصل <span>معنا.</span></h2>
+      <p>للاستفسار عن الخدمات الرياضية والاستشارات وتشغيل الأكاديميات والمنشآت أو طلب شراكات وتعاون، أرسل لنا تفاصيل طلبك.</p>
+    </div>
+    
+    <!-- النموذج المعدل المربوط مباشرة -->
+<form id="contact-form">
+  <!-- مفتاح Access Key الخاص بك -->
+  <input type="hidden" name="access_key" value="4f31ae99-1d38-44b8-85e6-d3059043dc64">
+
+  <!-- إعدادات عنوان الرسالة والحماية من البوتات -->
+  <input type="hidden" name="subject" value="طلب جديد من موقع شركة سهم">
+  <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+
+  <!-- حقول البيانات -->
+  <input type="text" name="الاسم الكامل" placeholder="الاسم الكامل" required>
+  <input type="email" name="البريد الإلكتروني" placeholder="البريد الإلكتروني" required>
+  
+  <select name="نوع الطلب" required>
+    <option value="">نوع الطلب</option>
+    <option value="تشغيل منشأة رياضية">تشغيل منشأة رياضية</option>
+    <option value="استشارات رياضية">استشارات رياضية</option>
+    <option value="تشغيل أكاديمية رياضية">تشغيل أكاديمية رياضية</option>
+    <option value="تنظيم فعالية رياضية">تنظيم فعالية رياضية</option>
+    <option value="شراكة أو تعاون">شراكة أو تعاون</option>
+    <option value="استفسار آخر">استفسار آخر</option>
+  </select>
+
+  <textarea name="تفاصيل الطلب" rows="4" placeholder="اكتب تفاصيل طلبك"></textarea>
+  <button class="button" type="submit">إرسال الطلب</button>
+</form>
+
+  </div>
+</section>
+</main>
+
+<footer>
+  <strong>شركة سهم | SAHAM</strong>
+  <div>لإدارة وتشغيل المنشآت الرياضية والأكاديميات والفعاليات</div>
+  <div>© <span id="year"></span> Saham Company</div>
+</footer>
+
+<script>
+const menuButton = document.getElementById('menuButton');
+const navigation = document.getElementById('navigation');
+
+menuButton.addEventListener('click', () => {
+  const isOpen = navigation.classList.toggle('open');
+  menuButton.setAttribute('aria-expanded', String(isOpen));
+});
+
+navigation.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navigation.classList.remove('open');
+    menuButton.setAttribute('aria-expanded', 'false');
+  });
+});
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.12});
+
+document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
+<!-- زر واتساب العائم -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+<a href="https://wa.me/966547802579"
+   target="_blank"
+   rel="noopener noreferrer"
+   aria-label="تواصل معنا عبر واتساب"
+   style="position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:#25D366;color:white;width:58px;height:58px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:32px;text-decoration:none;box-shadow:0 4px 12px rgba(0,0,0,0.25);z-index:9999;">
+  <i class="fa-brands fa-whatsapp"></i>
+</a>
+
+</a>
+
+<!-- منع انتقال الموقع عند إرسال النموذج -->
+<script>
+document.getElementById("contact-form").addEventListener("submit", async function(e) {
+  e.preventDefault();
+
+  const form = this;
+  const button = form.querySelector('button[type="submit"]');
+  button.disabled = true;
+  button.textContent = "جارٍ الإرسال...";
+
+  try {
+    const response = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      body: new FormData(form)
+    });
+
+    const result = await response.json();
+
+    if (response.ok && result.success) {
+      alert("تم إرسال طلبك بنجاح!");
+      form.reset();
+    } else {
+      alert("تعذر إرسال الطلب. حاولي مرة أخرى.");
+    }
+  } catch (error) {
+    alert("حدث خطأ في الاتصال. حاولي مرة أخرى.");
+  } finally {
+    button.disabled = false;
+    button.textContent = "إرسال الطلب";
+  }
+});
+</script>
+
+</body>
+</html>
